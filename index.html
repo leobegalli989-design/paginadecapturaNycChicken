@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <!-- Meta Tags para SEO e Responsividade --><meta charset="UTF-EM">
+    <!-- Meta Tags para SEO e Responsividade --><meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Título atualizado aqui --><title>💥 NYC Chicken House | O Sabor que Vai Mudar Seu Jogo!</title>
     <meta name="description" content="Prepare-se para o grande lançamento dia 1º de novembro às 18h! NYC Chicken House e novos Baldes de Frango. Garanta vantagens exclusivas na comunidade VIP do WhatsApp.">
@@ -75,7 +75,6 @@
             z-index: 2;
         }
 
-
         /* Imagem de fundo da Seção de Benefícios (AGORA COM A IMAGEM DE FRANGO) */
         .bg-benefits-section {
             background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.95)), url('https://i.postimg.cc/9rjfvXvw/nyb-122.jpg'); /* IMAGEM DE FRANGO APLICADA AQUI */
@@ -96,9 +95,10 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             animation: pulse-shadow 2s infinite;
         }
+        /* ANIMAÇÃO DE PULSAÇÃO MAIS AGRESSIVA */
         @keyframes pulse-shadow {
-            0%, 100% { box-shadow: 0 0 15px #10B981; }
-            50% { box-shadow: 0 0 30px #34D399, 0 0 10px #B91C1C; }
+            0%, 100% { box-shadow: 0 0 15px #FBBF24, 0 0 5px #10B981; } /* Gold/Green base */
+            50% { box-shadow: 0 0 40px #FBBF24, 0 0 20px #B91C1C; } /* Bigger, brighter Gold/Red flash */
         }
         .testimonial-fade-in {
             opacity: 0;
@@ -114,6 +114,43 @@
             height: 24px;
             @media (min-width: 640px) { width: 20px; height: 20px; }
         }
+
+        /* Estilos para o Carrossel de Imagens */
+        /* Custom scrollbar hide for cleaner carousel */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+
+        /* Estilo para a imagem no carrossel: 3 por view em desktop */
+        .carousel-item {
+            /* w-full para mobile, calc para desktop (3 imagens + space-x-6 (1.5rem ou 24px)) */
+            width: calc(100% - 1.5rem); /* Ajuste para mobile */
+            @media (min-width: 768px) { /* md breakpoint */
+                width: calc(33.3333% - 1rem); /* 1rem = 16px */
+            }
+            height: 280px; /* Altura ligeiramente aumentada para melhor visualização */
+        }
+
+        /* Estilos do Modal (Lightbox) */
+        .modal-content {
+            padding: 1rem;
+            background-color: rgba(255, 255, 255, 0.05); /* Fundo sutil */
+            border-radius: 0.75rem;
+            box-shadow: 0 0 20px rgba(251, 191, 36, 0.5); /* Sombra dourada */
+            position: relative;
+        }
+        .modal-close-btn {
+            color: #FBBF24;
+            transition: color 0.2s;
+        }
+        .modal-close-btn:hover {
+            color: #B91C1C;
+        }
+
 
         #popup-container {
             position: fixed; bottom: 20px; left: 20px; z-index: 1000;
@@ -144,66 +181,77 @@
 
 <body class="antialiased min-h-screen">
 
-    <!-- Cabeçalho Fixo (Fixed Header) --><header class="sticky top-0 z-50 bg-black/90 backdrop-blur-sm shadow-xl border-b border-red-700/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
-            <!-- Logotipo Placeholder --><a href="#" class="text-3xl font-black text-white tracking-widest">
-                <span class="text-red-700">NYC</span> <span class="text-amber-400">Chicken House</span>
-            </a>
-            
-            <!-- Botão de Ação do Cabeçalho --><a href="#" onclick="window.location.href=WHATSAPP_LINK" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg shadow-lg flex items-center transition duration-300">
-                <img src="https://i.postimg.cc/CZHCqMWg/Pngtree-3d-whatsapp-icon-20677217.png" alt="Logo WhatsApp" class="whatsapp-icon mr-2">
-                Entrar na Comunidade
-            </a>
-        </div>
-    </header>
-
-    <!-- Seção Principal (Hero Section) --><main class="bg-hero min-h-[calc(100vh-64px)] flex items-center justify-center pt-24 pb-12">
-        <!-- Vídeo de Fundo --><video autoplay loop muted playsinline id="hero-video">
-            <!-- Vídeo de Hambúrgueres e Frango em Loop -->
-            <source src="https://i.imgur.com/Tgob1iF.mp4" type="video/mp4">
+    <!-- Seção Principal (Hero Section) --><main class="bg-hero min-h-screen flex items-center justify-center pt-12 pb-12"> <!-- Removido pt-24 e ajustado para min-h-screen --><!-- Vídeo de Fundo --><video autoplay loop muted playsinline id="hero-video">
+            <!-- Vídeo de Hambúrgueres e Frango em Loop --><source src="https://i.imgur.com/Tgob1iF.mp4" type="video/mp4">
             <!-- Fallback para navegadores que não suportam vídeo --></video>
         
         <!-- Camada de Sobreposição para Legibilidade --><div class="video-overlay"></div>
 
         <div class="hero-content max-w-4xl mx-auto px-6 text-center">
-            <!-- TÍTULO ATUALIZADO -->
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-amber-400 mb-6 tracking-tight animate-in fade-in duration-1000">
-                🍔 Chegou o Lanche e o Balde de Frango Mais Crocante da Cidade! 💥
+            <!-- TÍTULO ATUALIZADO --><h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-amber-400 mb-6 tracking-tight animate-in fade-in duration-1000">
+                🍔 Chegou o Lanche e o Balde de Frango Mais Crocante de Poços De Caldas! 💥
             </h1>
-            <!-- SUBTÍTULO ATUALIZADO -->
-            <p class="text-xl md:text-3xl text-gray-100 mb-10 font-light tracking-wide animate-in fade-in delay-300 duration-1000">
+            <!-- SUBTÍTULO ATUALIZADO --><p class="text-xl md:text-3xl text-gray-100 mb-10 font-light tracking-wide animate-in fade-in delay-300 duration-1000">
                 <span class="font-bold">Dia 1º de Novembro, às 18h</span> — O lançamento que você esperava! Participe da Comunidade VIP e garanta <span class="font-bold text-amber-300">15% OFF e frete grátis</span> no primeiro pedido!
             </p>
             <div id="countdown" class="flex justify-center mb-12 animate-in fade-in delay-500 duration-1000">
                 <!-- Os dígitos e separadores serão injetados pelo JS --></div>
             <a id="cta-hero" href="#" onclick="window.location.href=WHATSAPP_LINK" class="cta-button inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white font-extrabold text-2xl py-4 px-10 rounded-xl shadow-2xl transition duration-500 transform hover:scale-105 border-4 border-green-300/50">
                 <img src="https://i.postimg.cc/CZHCqMWg/Pngtree-3d-whatsapp-icon-20677217.png" alt="Logo WhatsApp" class="whatsapp-icon w-8 h-8 mr-3">
-                Quero Entrar na Comunidade 🔥
+                Quero Entrar na Comunidade VIP 🔥
             </a>
             <p class="text-sm text-red-400 mt-3 font-semibold animate-in fade-in delay-700 duration-1000">VAGAS LIMITADAS! Apenas para os mais rápidos. 15% OFF NO PRIMEIRO PEDIDO E ENTREGA GRÁTIS EM TODA POÇOS DE CALDAS!</p>
         </div>
     </main>
 
-    <!-- Seção de Benefícios e Exclusividade --><section class="bg-benefits-section py-16 min-h-[60vh] flex items-center justify-center">
+    <!-- Seção de Menu/Cardápio --><section class="bg-benefits-section py-16 min-h-[60vh] flex items-center justify-center">
         <div class="max-w-6xl mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold text-red-700 mb-12">SEJA EXCLUSIVO. SEJA O PRIMEIRO.</h2>
+            <!-- TÍTULO ATUALIZADO -->
+            <h2 class="text-4xl font-bold text-red-700 mb-12">Conheça nosso cardápio</h2>
+
+            <!-- Boxes de itens do cardápio removidos conforme solicitado -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-6 bg-black/70 border-4 border-amber-400 rounded-xl shadow-2xl transform hover:scale-[1.02] transition duration-300">
-                    <span class="text-6xl mb-4 block">🎟️</span>
-                    <h3 class="text-2xl font-bold text-white mb-3">Cupons VIP - 15% OFF E ENTREGA GRÁTIS!</h3>
-                    <p class="text-gray-300">Quem estiver na comunidade antes do lançamento garante cupons de desconto <span class="font-semibold text-amber-300">que ninguém mais terá</span>.</p>
-                </div>
-                <div class="p-6 bg-black/70 border-4 border-red-700 rounded-xl shadow-2xl transform hover:scale-[1.02] transition duration-300">
-                    <span class="text-6xl mb-4 block">📰</span>
-                    <h3 class="text-2xl font-bold text-white mb-3">Novidades Primeiro</h3>
-                    <p class="text-gray-300">Seja o primeiro a ver o menu, fotos, e provar os novos Baldes de Frango e Hamburgueres. Acesso antecipado!</p>
-                </div>
-                <div class="p-6 bg-black/70 border-4 border-amber-400 rounded-xl shadow-2xl transform hover:scale-[1.02] transition duration-300">
-                    <span class="text-6xl mb-4 block">🚨</span>
-                    <h3 class="text-2xl font-bold text-white mb-3">Vagas Limitadas</h3>
-                    <p class="text-gray-300">O grupo tem um número máximo de membros. Se você sair, outra pessoa entra no seu lugar. <span class="font-semibold text-red-400">Corra!</span></p>
-                </div>
+                
             </div>
+            
+            <!-- Carrossel de Imagens do Cardápio (NOVA SEÇÃO COM SETAS) -->
+            <div class="mt-16">
+                <h3 class="text-3xl font-bold text-white mb-6">Nossas Delícias em Imagens:</h3>
+                
+                <!-- Novo container relativo para os botões e carrossel -->
+                <div class="relative max-w-full mx-auto">
+                    
+                    <!-- Botão Esquerdo (Anterior) -->
+                    <button id="scroll-left" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-black/50 hover:bg-black/80 rounded-full transition duration-300 hidden md:block border border-amber-400 -ml-4" aria-label="Anterior">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-6 h-6 text-amber-400">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                        </svg>
+                    </button>
+                    
+                    <!-- Carrossel -->
+                    <div id="image-carousel" class="flex overflow-x-scroll space-x-6 pb-4 pt-2 snap-x snap-mandatory scrollbar-hide">
+                        <!-- Imagens com a nova classe de tamanho e o manipulador de clique -->
+                        <img src="https://i.postimg.cc/YhJTXjV5/nyb-239.jpg" alt="Hamburguer Gourmet" class="carousel-item object-cover rounded-xl shadow-lg snap-start flex-shrink-0 border-2 border-amber-400 transform hover:scale-[1.03] transition duration-300 cursor-pointer" onclick="openModal('https://i.postimg.cc/YhJTXjV5/nyb-239.jpg')">
+                        <img src="https://i.postimg.cc/9rjfvXvw/nyb-122.jpg" alt="Baldes de Frango Crocante" class="carousel-item object-cover rounded-xl shadow-lg snap-start flex-shrink-0 border-2 border-amber-400 transform hover:scale-[1.03] transition duration-300 cursor-pointer" onclick="openModal('https://i.postimg.cc/9rjfvXvw/nyb-122.jpg')">
+                        <img src="https://i.postimg.cc/vcpCPDkQ/nyb-249.jpg" alt="Lanche Duplo" class="carousel-item object-cover rounded-xl shadow-lg snap-start flex-shrink-0 border-2 border-amber-400 transform hover:scale-[1.03] transition duration-300 cursor-pointer" onclick="openModal('https://i.postimg.cc/vcpCPDkQ/nyb-249.jpg')">
+                        <img src="https://i.postimg.cc/gwpQWQGK/nyb_275.jpg" alt="Batata Frita e Molhos" class="carousel-item object-cover rounded-xl shadow-lg snap-start flex-shrink-0 border-2 border-amber-400 transform hover:scale-[1.03] transition duration-300 cursor-pointer" onclick="openModal('https://i.postimg.cc/gwpQWQGK/nyb_275.jpg')">
+                        <img src="https://i.postimg.cc/yJT5YjNL/nyb_293.jpg" alt="Detalhe do Lanche" class="carousel-item object-cover rounded-xl shadow-lg snap-start flex-shrink-0 border-2 border-amber-400 transform hover:scale-[1.03] transition duration-300 cursor-pointer" onclick="openModal('https://i.postimg.cc/yJT5YjNL/nyb_293.jpg')">
+                        <img src="https://i.postimg.cc/wR1b2dkM/nyb_364.jpg" alt="Lanche com Queijo" class="carousel-item object-cover rounded-xl shadow-lg snap-start flex-shrink-0 border-2 border-amber-400 transform hover:scale-[1.03] transition duration-300 cursor-pointer" onclick="openModal('https://i.postimg.cc/wR1b2dkM/nyb_364.jpg')">
+                        <img src="https://i.postimg.cc/CzfQfS1D/nyb_408.jpg" alt="Lanche de Frango" class="carousel-item object-cover rounded-xl shadow-lg snap-start flex-shrink-0 border-2 border-amber-400 transform hover:scale-[1.03] transition duration-300 cursor-pointer" onclick="openModal('https://i.postimg.cc/CzfQfS1D/nyb_408.jpg')">
+                    </div>
+
+                    <!-- Botão Direito (Próximo) -->
+                    <button id="scroll-right" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-black/50 hover:bg-black/80 rounded-full transition duration-300 hidden md:block border border-amber-400 -mr-4" aria-label="Próximo">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-6 h-6 text-amber-400">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
+                    
+                </div>
+                
+                <p class="text-xs text-gray-400 mt-2">Arraste para o lado para ver mais!</p>
+            </div>
+            <!-- Fim do Carrossel de Imagens do Cardápio -->
             
             <!-- Seção de Depoimentos (Carrossel) --><div class="mt-16 overflow-hidden relative">
                 <h3 class="text-3xl font-bold text-white mb-8">O que nossos clientes apaixonados dizem:</h3>
@@ -231,6 +279,15 @@
     </footer>
 
     <!-- Container para Popups de Prova Social --><div id="popup-container"></div>
+    
+    <!-- MODAL (LIGHTBOX) PARA VISUALIZAÇÃO DA IMAGEM EM TELA CHEIA -->
+    <div id="image-modal" class="fixed inset-0 z-[1001] hidden bg-black/90 items-center justify-center transition-opacity duration-300" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button onclick="closeModal()" class="modal-close-btn absolute top-2 right-2 text-4xl font-bold leading-none p-2">&times;</button>
+            <img id="modal-image" src="" class="max-w-[90vw] max-h-[90vh] object-contain rounded-lg">
+        </div>
+    </div>
+
 
     <!-- JavaScript para o Contador Regressivo e Funcionalidades --><script>
         // Variável de Link do WhatsApp
@@ -240,6 +297,24 @@
         // OBS: Para a demonstração no Canvas, usarei 2025 para garantir que o contador funcione.
         const launchDate = new Date("November 1, 2025 18:00:00 GMT-03:00").getTime();
         const countdownElement = document.getElementById('countdown');
+        const carousel = document.getElementById('image-carousel');
+        const scrollLeftBtn = document.getElementById('scroll-left');
+        const scrollRightBtn = document.getElementById('scroll-right');
+        const imageModal = document.getElementById('image-modal');
+        const modalImage = document.getElementById('modal-image');
+
+
+        // LÓGICA DO MODAL (LIGHTBOX)
+        function openModal(src) {
+            modalImage.src = src;
+            imageModal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            imageModal.style.display = 'none';
+            modalImage.src = '';
+        }
+
 
         // Função formatTime ATUALIZADA para incluir o zero à esquerda (padStart)
         function formatTime(t, label) {
@@ -296,6 +371,33 @@
         // Chamada inicial para evitar delay
         updateCountdown();
 
+        // LÓGICA DO CARROSSEL DE IMAGENS (Setas de Navegação e Transição Animada)
+        if (scrollLeftBtn && scrollRightBtn && carousel) {
+            
+            // Espera o DOM carregar completamente para calcular o tamanho real da imagem
+            window.addEventListener('load', () => {
+                const firstImage = carousel.querySelector('.carousel-item');
+                // Calcula a distância de rolagem: largura de uma imagem mais a margem (space-x-6 = 1.5rem ou 24px)
+                const itemWidthWithMargin = firstImage.offsetWidth + 24;
+                // Distância total de rolagem (3 itens)
+                const scrollDistance = itemWidthWithMargin * 3; 
+
+                scrollLeftBtn.addEventListener('click', () => {
+                    carousel.scrollBy({
+                        left: -scrollDistance,
+                        behavior: 'smooth'
+                    });
+                });
+
+                scrollRightBtn.addEventListener('click', () => {
+                    carousel.scrollBy({
+                        left: scrollDistance,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        }
+
 
         // Lógica do Carrossel de Depoimentos
         const testimonials = [
@@ -327,7 +429,7 @@
         setInterval(showTestimonial, 5000); // Muda o depoimento a cada 5 segundos
 
 
-        // LÓGICA DO POPUP DE PROVA SOCIAL - ATUALIZADA
+        // LÓGICA DO POPUP DE PROVA SOCIAL
         const INITIAL_USERS = [
             "Mariana S.",
             "João P.",
