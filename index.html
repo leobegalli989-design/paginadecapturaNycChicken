@@ -3,30 +3,12 @@
 <head>
     <!-- Meta Tags para SEO e Responsividade --><meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Título atualizado aqui --><title>💥 NYC Chicken House | O Sabor que Vai Mudar Seu Jogo!</title>
+    <title>💥 NYC Chicken House | O Sabor que Vai Mudar Seu Jogo!</title>
     <meta name="description" content="Prepare-se para o grande lançamento dia 1º de novembro às 18h! NYC Chicken House e novos Baldes de Frango. Garanta vantagens exclusivas na comunidade VIP do WhatsApp.">
-    <meta name="keywords" content="hamburgueria, lançamento, balde de frango, promoção de inauguração, exclusivo, fast food, NYC Chicken House">
+    <meta name="keywords" content="hamburgueria, lançamento, balde de frango, promoção de inauguração, exclusivo, fast food, NYC Chicken House, Poços de Caldas">
     <meta name="author" content="NYC Chicken House">
     
-    <!-- Placeholder para o Meta Pixel do Facebook --><!-- Cole seu código do Meta Pixel (Facebook Pixel) aqui, dentro da tag <script> ou <noscript> --><script>
-        // Exemplo de código do Meta Pixel (substitua pelo seu)
-        /*
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.com/en_US/fbevents.js');
-        fbq('init', 'SEU_ID_DO_PIXEL');
-        fbq('track', 'PageView');
-        */
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=SEU_ID_DO_PIXEL&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- Fim do Placeholder do Meta Pixel --><!-- Tailwind CSS CDN --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS CDN --><script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Configuração do Tailwind para Cores e Fonte Inter --><style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
@@ -39,7 +21,7 @@
         /* Seção Hero como container para o vídeo */
         .bg-hero {
             position: relative;
-            overflow: hidden; /* Garante que o vídeo não transborde */
+            overflow: hidden;
             background-color: #001f40; /* Cor de fallback caso o vídeo não carregue */
         }
 
@@ -52,10 +34,10 @@
             min-height: 100%;
             width: auto;
             height: auto;
-            z-index: 0; /* Coloca o vídeo atrás do conteúdo */
+            z-index: 0;
             transform: translate(-50%, -50%);
             background-size: cover;
-            object-fit: cover; /* Garante que o vídeo cubra o container sem esticar */
+            object-fit: cover; 
         }
 
         /* Camada de sobreposição para legibilidade do texto */
@@ -65,8 +47,8 @@
             left: 0;
             height: 100%;
             width: 100%;
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.95)); /* Gradiente mais escuro para melhor contraste */
-            z-index: 1; /* Acima do vídeo, abaixo do conteúdo */
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.95)); 
+            z-index: 1; 
         }
 
         /* O conteúdo do hero precisa de z-index para aparecer sobre o overlay */
@@ -75,17 +57,17 @@
             z-index: 2;
         }
 
-        /* Imagem de fundo da Seção de Benefícios (AGORA COM A IMAGEM DE FRANGO) */
+        /* Imagem de fundo da Seção de Menu */
         .bg-benefits-section {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.95)), url('https://i.postimg.cc/9rjfvXvw/nyb-122.jpg'); /* IMAGEM DE FRANGO APLICADA AQUI */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.95)), url('https://i.postimg.cc/9rjfvXvw/nyb-122.jpg'); 
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
 
-        /* NOVA Imagem de fundo da Seção Final de CTA */
+        /* Imagem de fundo da Seção Final de CTA */
         .bg-cta-final-section {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.95)), url('https://i.postimg.cc/zHyP71k5/nyb-359.jpg'); /* IMAGEM 3 APLICADA AQUI */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.95)), url('https://i.postimg.cc/zHyP71k5/nyb-359.jpg'); 
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -97,8 +79,8 @@
         }
         /* ANIMAÇÃO DE PULSAÇÃO MAIS AGRESSIVA */
         @keyframes pulse-shadow {
-            0%, 100% { box-shadow: 0 0 15px #FBBF24, 0 0 5px #10B981; } /* Gold/Green base */
-            50% { box-shadow: 0 0 40px #FBBF24, 0 0 20px #B91C1C; } /* Bigger, brighter Gold/Red flash */
+            0%, 100% { box-shadow: 0 0 15px #FBBF24, 0 0 5px #10B981; } 
+            50% { box-shadow: 0 0 40px #FBBF24, 0 0 20px #B91C1C; } 
         }
         .testimonial-fade-in {
             opacity: 0;
@@ -110,9 +92,9 @@
             to { opacity: 1; transform: translateY(0); }
         }
         .whatsapp-icon {
-            width: 24px;
-            height: 24px;
-            @media (min-width: 640px) { width: 20px; height: 20px; }
+            width: 28px;
+            height: 28px;
+            @media (min-width: 640px) { width: 24px; height: 24px; }
         }
 
         /* Estilos para o Carrossel de Imagens */
@@ -125,15 +107,14 @@
             pointer-events: auto; margin-top: 10px; padding: 12px;
             background-color: #262626; color: white; border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); border-left: 4px solid #34D399;
-            /* Novas animações */
             animation: fadeInUp 0.5s ease-out forwards;
-            opacity: 0; /* Começa invisível */
+            opacity: 0; 
         }
         @keyframes fadeInUp {
             from { transform: translateY(20px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
-        .fadeOutDown { /* Classe para animação de saída */
+        .fadeOutDown { 
             animation: fadeOutDown 0.5s ease-in forwards;
         }
         @keyframes fadeOutDown {
@@ -141,14 +122,13 @@
             to { transform: translateY(20px); opacity: 0; }
         }
         
-        /* Estilos do Carrossel de Menu (Custom Tailwind/JS) */
+        /* Estilos do Carrossel de Menu */
         #menu-carousel-slides .flex-shrink-0 {
             transition: transform 0.5s ease-in-out;
         }
 
         #menu-carousel-container {
-            /* Definido no HTML para garantir o foco da imagem e vídeo */
-            box-shadow: 0 0 15px #FBBF24; /* Sombra sutil para destaque */
+            box-shadow: 0 0 15px #FBBF24; 
         }
         
     </style>
@@ -156,81 +136,90 @@
 
 <body class="antialiased min-h-screen">
 
-    <!-- Seção Principal (Hero Section) --><main class="bg-hero min-h-screen flex items-center justify-center pt-12 pb-12"> <!-- Removido pt-24 e ajustado para min-h-screen --><!-- Vídeo de Fundo --><video autoplay loop muted playsinline id="hero-video">
+    <!-- Seção Principal (Hero Section) --><main class="bg-hero min-h-screen flex items-center justify-center pt-12 pb-12"> 
+        <!-- Vídeo de Fundo --><video autoplay loop muted playsinline id="hero-video">
             <!-- Vídeo de Hambúrgueres e Frango em Loop --><source src="https://i.imgur.com/Tgob1iF.mp4" type="video/mp4">
             <!-- Fallback para navegadores que não suportam vídeo --></video>
         
         <!-- Camada de Sobreposição para Legibilidade --><div class="video-overlay"></div>
 
         <div class="hero-content max-w-4xl mx-auto px-6 text-center">
-            <!-- TÍTULO ATUALIZADO --><h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-amber-400 mb-6 tracking-tight animate-in fade-in duration-1000">
+            <!-- TÍTULO --><h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-amber-400 mb-6 tracking-tight animate-in fade-in duration-1000">
                 🍔 Chegou o Lanche e o Balde de Frango Mais Crocante de Poços De Caldas! 💥
             </h1>
-            <!-- SUBTÍTULO ATUALIZADO --><p class="text-xl md:text-3xl text-gray-100 mb-10 font-light tracking-wide animate-in fade-in delay-300 duration-1000">
+            <!-- SUBTÍTULO --><p class="text-xl md:text-3xl text-gray-100 mb-10 font-light tracking-wide animate-in fade-in delay-300 duration-1000">
                 <span class="font-bold">Dia 1º de Novembro, às 18h</span> — O lançamento que você esperava! Participe da Comunidade VIP e garanta <span class="font-bold text-amber-300">15% OFF e frete grátis</span> no primeiro pedido!
             </p>
+            
             <div id="countdown" class="flex justify-center mb-12 animate-in fade-in delay-500 duration-1000">
                 <!-- Os dígitos e separadores serão injetados pelo JS --></div>
-            <a id="cta-hero" href="#" onclick="window.location.href=WHATSAPP_LINK" class="cta-button inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white font-extrabold text-2xl py-4 px-10 rounded-xl shadow-2xl transition duration-500 transform hover:scale-105 border-4 border-green-300/50">
-                <img src="https://i.postimg.cc/CZHCqMWg/Pngtree-3d-whatsapp-icon-20677217.png" alt="Logo WhatsApp" class="whatsapp-icon w-8 h-8 mr-3">
+            
+            <!-- CTA Principal --><a id="cta-hero" href="#" onclick="window.location.href=WHATSAPP_LINK" class="cta-button inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white font-extrabold text-2xl py-4 px-10 rounded-xl shadow-2xl transition duration-500 transform hover:scale-105 border-4 border-green-300/50">
+                <!-- Ícone do WhatsApp --><img src="https://i.postimg.cc/CZHCqMWg/Pngtree-3d-whatsapp-icon-20677217.png" alt="Logo WhatsApp" class="whatsapp-icon w-8 h-8 mr-3">
                 Quero Entrar na Comunidade VIP 🔥
             </a>
-            <p class="text-sm text-red-400 mt-3 font-semibold animate-in fade-in delay-700 duration-1000">VAGAS LIMITADAS! Apenas para os mais rápidos. 15% OFF NO PRIMEIRO PEDIDO E ENTREGA GRÁTIS EM TODA POÇOS DE CALDAS!</p>
+            <p class="text-sm text-red-400 mt-3 font-semibold animate-in fade-in delay-700 duration-1000">15% OFF NO PRIMEIRO PEDIDO E ENTREGA GRÁTIS EM TODA POÇOS DE CALDAS!</p>
         </div>
     </main>
 
-    <!-- Seção de Menu/Cardápio --><section class="bg-benefits-section py-16 min-h-[60vh] flex items-center justify-center">
+    <!-- Seção de Menu/Cardápio e Depoimentos --><section class="bg-benefits-section py-16 min-h-[60vh] flex items-center justify-center">
         <div class="max-w-6xl mx-auto px-6 text-center">
 
-            <!-- NOVO CARROSSEL DE IMAGENS (Tailwind/JS Controlled) -->
-            <div class="max-w-xl mx-auto text-center relative overflow-hidden">
+            <!-- Carrossel de Imagens do Cardápio --><div class="max-w-xl mx-auto text-center relative overflow-hidden">
                 <h2 class="text-4xl font-bold text-red-700 mb-8">Conheça nosso cardápio</h2>
                 
                 <div id="menu-carousel-container" class="relative w-full h-[350px] overflow-hidden rounded-xl border-4 border-amber-400">
                     
                     <div id="menu-carousel-slides" class="flex w-full h-full transition-transform duration-500 ease-in-out" style="transform: translateX(0%);">
                         
-                        <!-- Slide 1 (Vídeo 1) -->
-                        <div class="flex-shrink-0 w-full h-full">
+                        <!-- Slide 1 (Vídeo 1 - Original) --><div class="flex-shrink-0 w-full h-full">
                             <video class="w-full h-full object-cover" autoplay muted loop playsinline>
                                 <source src="https://i.imgur.com/Tgob1iF.mp4" type="video/mp4">
                             </video>
                         </div>
                         
-                        <!-- Slide 2 (Vídeo 2 - NOVO) -->
-                        <div class="flex-shrink-0 w-full h-full">
+                        <!-- Slide 2 (Vídeo 2 - Original) --><div class="flex-shrink-0 w-full h-full">
                             <video class="w-full h-full object-cover" autoplay muted loop playsinline>
                                 <source src="https://i.imgur.com/MXMpNEv.mp4" type="video/mp4">
                             </video>
                         </div>
-                        
-                        <!-- Slide 3 (Imagem Placeholder - NOVO) -->
-                        <div class="flex-shrink-0 w-full h-full">
-                            <img src="https://placehold.co/800x600/222222/FBBF24?text=IMAGEM+OPCIONAL+AQUI" alt="Imagem de exemplo" class="w-full h-full object-cover">
+
+                        <!-- Slide 3 (Vídeo 3 - CORRIGIDO) --><div class="flex-shrink-0 w-full h-full">
+                            <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+                                <source src="https://i.imgur.com/BMyN6mn.mp4" type="video/mp4">
+                            </video>
+                        </div>
+
+                        <!-- Slide 4 (Vídeo 4 - CORRIGIDO) --><div class="flex-shrink-0 w-full h-full">
+                            <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+                                <source src="https://i.imgur.com/zICiOpS.mp4" type="video/mp4">
+                            </video>
+                        </div>
+
+                        <!-- Slide 5 (Vídeo 5 - CORRIGIDO) --><div class="flex-shrink-0 w-full h-full">
+                            <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+                                <source src="https://i.imgur.com/3337p3k.mp4" type="video/mp4">
+                            </video>
                         </div>
                         
                     </div>
                     
-                    <!-- Controles de Navegação (Prev) -->
-                    <button onclick="navigateMenuCarousel(-1)" class="absolute left-0 top-1/2 -translate-y-1/2 p-4 bg-black/50 hover:bg-black/75 transition duration-300 rounded-r-xl" aria-label="Anterior">
+                    <!-- Controles de Navegação (Prev) --><button onclick="navigateMenuCarousel(-1)" class="absolute left-0 top-1/2 -translate-y-1/2 p-4 bg-black/50 hover:bg-black/75 transition duration-300 rounded-r-xl" aria-label="Anterior">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-6 h-6 text-amber-400">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                         </svg>
                     </button>
                     
-                    <!-- Controles de Navegação (Next) -->
-                    <button onclick="navigateMenuCarousel(1)" class="absolute right-0 top-1/2 -translate-y-1/2 p-4 bg-black/50 hover:bg-black/75 transition duration-300 rounded-l-xl" aria-label="Próximo">
+                    <!-- Controles de Navegação (Next) --><button onclick="navigateMenuCarousel(1)" class="absolute right-0 top-1/2 -translate-y-1/2 p-4 bg-black/50 hover:bg-black/75 transition duration-300 rounded-l-xl" aria-label="Próximo">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-6 h-6 text-amber-400">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                         </svg>
                     </button>
                     
                 </div>
-                <p class="text-xs text-gray-400 mt-2">Veja o sabor em movimento! Use as setas para navegar.</p>
+                <p class="text-xs text-gray-400 mt-2">Veja o sabor em movimento! Use as setas ou aguarde para navegar automaticamente.</p>
             </div>
-            <!-- Fim do Carrossel de Imagens do Cardápio -->
-            
-            <!-- Seção de Depoimentos (Carrossel) --><div class="mt-16 overflow-hidden relative">
+            <!-- Fim do Carrossel de Imagens do Cardápio --><!-- Seção de Depoimentos (Carrossel Rotativo) --><div class="mt-16 overflow-hidden relative">
                 <h3 class="text-3xl font-bold text-white mb-8">O que nossos clientes apaixonados dizem:</h3>
                 <div id="testimonials-carousel" class="flex transition-transform duration-700 ease-in-out">
                     <!-- Depoimentos serão injetados aqui pelo JavaScript --></div>
@@ -244,7 +233,7 @@
             <p class="text-xl text-gray-200 mb-8 font-medium">
                 Não deixe para depois: as vagas para a comunidade VIP <span class="font-bold text-red-400">são limitadas</span> e o tempo está acabando. Garanta sua exclusividade!
             </p>
-            <a id="cta-final" href="#" onclick="window.location.href=WHATSAPP_LINK" class="cta-button inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white font-extrabold text-2xl py-4 px-10 rounded-xl shadow-2xl transition duration-500 transform hover:scale-105 border-4 border-amber-400">
+            <!-- CTA Final --><a id="cta-final" href="#" onclick="window.location.href=WHATSAPP_LINK" class="cta-button inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white font-extrabold text-2xl py-4 px-10 rounded-xl shadow-2xl transition duration-500 transform hover:scale-105 border-4 border-amber-400">
                 <img src="https://i.postimg.cc/CZHCqMWg/Pngtree-3d-whatsapp-icon-20677217.png" alt="Logo WhatsApp" class="whatsapp-icon w-8 h-8 mr-3">
                 EU QUERO MINHA VAGA EXCLUSIVA! 🚀
             </a>
@@ -253,6 +242,23 @@
 
     <!-- Rodapé Simples --><footer class="bg-gray-900 py-4 text-center text-gray-500 text-sm">
         <p>&copy; 2025 NYC Chicken House. Todos os direitos reservados.</p>
+        <!-- Placeholder para o Meta Pixel do Facebook (mantido no final do body por boas práticas) --><script>
+            /*
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.com/en_US/fbevents.js');
+            fbq('init', 'SEU_ID_DO_PIXEL');
+            fbq('track', 'PageView');
+            */
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=SEU_ID_DO_PIXEL&ev=PageView&noscript=1"
+        /></noscript>
     </footer>
 
     <!-- Container para Popups de Prova Social --><div id="popup-container"></div>
@@ -262,21 +268,20 @@
         const WHATSAPP_LINK = "https://chat.whatsapp.com/FS0rF7LLytm6ZbRbURX9Gq?mode=wwc";
 
         // Data e hora alvo: 1 de Novembro, 18:00:00 (Fuso horário de Brasília - GMT-3)
-        // OBS: Para a demonstração no Canvas, usarei 2025 para garantir que o contador funcione.
+        // OBS: Usando 2025 para garantir que o contador funcione na demonstração.
         const launchDate = new Date("November 1, 2025 18:00:00 GMT-03:00").getTime();
         const countdownElement = document.getElementById('countdown');
 
         // LÓGICA DO CARROSSEL DE MENU
         let currentSlide = 0;
         const slidesContainer = document.getElementById('menu-carousel-slides');
-        // O número de slides é 3
-        const totalSlides = 3; 
+        // Total de slides é 5
+        const totalSlides = 5; 
 
         function navigateMenuCarousel(direction) {
-            // Calcula o próximo slide
             currentSlide += direction;
 
-            // Lógica de loop (volta para o início ou para o fim)
+            // Lógica de loop
             if (currentSlide < 0) {
                 currentSlide = totalSlides - 1;
             } else if (currentSlide >= totalSlides) {
@@ -284,14 +289,20 @@
             }
 
             // Aplica a transformação de translação CSS
-            const offset = -currentSlide * 100; // Move por 100% da largura do slide
+            const offset = -currentSlide * 100;
             slidesContainer.style.transform = `translateX(${offset}%)`;
         }
 
+        // Função de Auto-Play para o Carrossel do Menu
+        function autoPlayMenuCarousel() {
+            navigateMenuCarousel(1); // Avança um slide
+        }
+
+        // Inicia o auto-play a cada 4 segundos
+        setInterval(autoPlayMenuCarousel, 4000); 
 
         // Função formatTime ATUALIZADA para incluir o zero à esquerda (padStart)
         function formatTime(t, label) {
-            // Converte o número para string e adiciona zero à esquerda se for um único dígito
             const formattedT = t.toString().padStart(2, '0');
             
             return `<div class="flex flex-col items-center mx-1 sm:mx-2">
@@ -312,7 +323,7 @@
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
             
-            // Define o separador com estilo (dois pontos grandes e amarelos)
+            // Define o separador
             const separatorHtml = `<span class="text-4xl md:text-6xl font-black text-amber-400 block pb-4">:</span>`;
             
             let html = `
@@ -329,9 +340,10 @@
                 // Lançamento concluído
                 clearInterval(countdownInterval);
                 html = `<span class="text-4xl font-bold text-amber-400 bg-red-700 p-4 rounded-xl shadow-2xl">🎉 LANÇAMENTO ACONTECENDO AGORA! 🎉</span>`;
-                // Atualiza o texto dos CTAs para "PEDIR AGORA" ou similar, se for o caso.
-                document.getElementById('cta-hero').textContent = 'FAÇA SEU PEDIDO AGORA!';
-                document.getElementById('cta-final').textContent = 'FAÇA SEU PEDIDO AGORA!';
+                
+                // Atualiza o texto dos CTAs
+                document.getElementById('cta-hero').innerHTML = `<img src="https://i.postimg.cc/CZHCqMWg/Pngtree-3d-whatsapp-icon-20677217.png" alt="Logo WhatsApp" class="whatsapp-icon w-8 h-8 mr-3"> FAÇA SEU PEDIDO AGORA!`;
+                document.getElementById('cta-final').innerHTML = `<img src="https://i.postimg.cc/CZHCqMWg/Pngtree-3d-whatsapp-icon-20677217.png" alt="Logo WhatsApp" class="whatsapp-icon w-8 h-8 mr-3"> FAÇA SEU PEDIDO AGORA!`;
 
             }
             
@@ -357,7 +369,7 @@
         let currentTestimonialIndex = 0;
 
         function showTestimonial() {
-            testimonialsCarousel.innerHTML = ''; // Limpa o depoimento anterior
+            testimonialsCarousel.innerHTML = ''; 
             const testimonial = testimonials[currentTestimonialIndex];
             
             const testimonialDiv = document.createElement('div');
@@ -384,25 +396,23 @@
             "Pedro M.",
             "Aline L."
         ];
-        // Cria uma cópia da lista de usuários para controle de não repetição
         let availableUsers = [...INITIAL_USERS];
 
         const popupContainer = document.getElementById('popup-container');
 
         function showNotification() {
+            // Se todos os nomes foram usados, reinicia a lista para manter a prova social funcionando
             if (availableUsers.length === 0) {
-                // Para se todos os usuários já foram mostrados
-                // console.log("Todos os popups de prova social foram exibidos.");
-                return; 
+                availableUsers = [...INITIAL_USERS]; 
             }
             
-            // 1. Seleciona e remove o usuário da lista
+            // 1. Seleciona e remove o usuário da lista (para evitar repetição imediata)
             const randomIndex = Math.floor(Math.random() * availableUsers.length);
-            const userName = availableUsers.splice(randomIndex, 1)[0]; // Remove e pega o nome
+            const userName = availableUsers.splice(randomIndex, 1)[0]; 
 
-            // 2. Cria o elemento popup com a mensagem fixa e o VIP emoji
+            // 2. Cria o elemento popup com a mensagem
             const popup = document.createElement('div');
-            popup.className = 'social-popup'; // Já contém animação de entrada 'fadeInUp'
+            popup.className = 'social-popup'; 
             
             // Mensagem agressiva e de linha única
             popup.innerHTML = `<p class="text-sm leading-tight font-semibold"><span class="font-extrabold text-amber-400">👑 ${userName}</span> GARANTIU SUA VAGA VIP AGORA!</p>`;
@@ -410,9 +420,7 @@
             // 3. Adiciona o popup ao container
             popupContainer.appendChild(popup);
 
-            // Tempo que o popup fica visível
             const displayTime = 4000;
-            // Tempo total da animação de saída (deve corresponder ao CSS fadeOutDown)
             const animationOutTime = 500; 
 
             // Configura o desaparecimento e remoção
@@ -430,12 +438,15 @@
 
         // Configura o intervalo para disparar popups em tempos aleatórios
         function startRandomNotifications() {
-            if (availableUsers.length > 0) {
-                const randomDelay = Math.random() * 10000 + 5000; // 5000ms a 15000ms (5 a 15 segundos)
+            const randomDelay = Math.random() * 10000 + 5000; // 5s a 15s
+            
+            // Dispara a notificação se o container não estiver com muitos popups (evita spam visual)
+            if (popupContainer.childElementCount < 3) {
                 showNotification();
-                // Chama a próxima notificação recursivamente
-                setTimeout(startRandomNotifications, randomDelay);
             }
+
+            // Chama a próxima notificação recursivamente
+            setTimeout(startRandomNotifications, randomDelay);
         }
 
         // Inicia o ciclo de notificações
